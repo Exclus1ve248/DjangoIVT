@@ -18,7 +18,7 @@ def category(request, cat_id):
     if cat_id >1000:
         raise Http404()
     if cat_id < 50:
-        return redirect('/', permanent=True)
+        return redirect('home', permanent=True)
     return HttpResponse(f'<h1> Номер категории - </h1> <br> {cat_id}')
 
 def pageNotFound(request, exception):
