@@ -7,7 +7,7 @@ from django.shortcuts import render
 def index(request):
     res = request.GET
     print(request.GET)
-    return HttpResponse(f'Главная страница основного приложения<br> {dict(res)["group"][0]}')
+    return HttpResponse(f'Главная страница основного приложения<br> {dict(res)}')
 
 def categorys(request):
     return HttpResponse('<h1> ссылки по категориям </h1>')
