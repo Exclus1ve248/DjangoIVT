@@ -1,5 +1,7 @@
 from django.http import HttpResponse, HttpResponseNotFound, Http404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+
 # модуль для хранения текущих представлений(то что мы будем видеть)
 
 # Create your views here.
@@ -15,6 +17,8 @@ def categorys(request):
 def category(request, cat_id):
     if cat_id >1000:
         raise Http404()
+    if cat_id < 50:
+        return redirect('/', permanent=True)
     return HttpResponse(f'<h1> Номер категории - </h1> <br> {cat_id}')
 
 def pageNotFound(request, exception):
