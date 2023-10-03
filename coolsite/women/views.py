@@ -1,4 +1,5 @@
-from django.http import HttpResponse, HttpResponseNotFound, Http404
+from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseServerError, HttpResponseForbidden, \
+    HttpResponseBadRequest
 from django.shortcuts import render, redirect
 
 
@@ -23,3 +24,12 @@ def category(request, cat_id):
 
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1> Страница не найдена </h1>')
+
+def serverError(request, template_name='500.html'):
+
+    return HttpResponseServerError(f'<h1> ошибка </h1>')
+def Forbidden(request, exception, template_name='403.html'):
+    return HttpResponseForbidden('')
+
+def badRequest(request, exception, template_name='400.html'):
+    return HttpResponseBadRequest('')
