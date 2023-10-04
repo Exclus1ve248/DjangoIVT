@@ -6,9 +6,12 @@ from django.shortcuts import render, redirect
 # модуль для хранения текущих представлений(то что мы будем видеть)
 
 # Create your views here.
+menu =['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
 
 def index(request):
-    data = {'title': 'Главная страница'}
+    data = {'title': 'Главная страница',
+            'menu': menu,
+            }
     return render(request, 'women/index.html', data)
 
 def categorys(request):
