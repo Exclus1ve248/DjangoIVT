@@ -8,9 +8,8 @@ from django.shortcuts import render, redirect
 # Create your views here.
 
 def index(request):
-    res = request.GET
-    print(request.GET)
-    return HttpResponse(f'Главная страница основного приложения<br> {dict(res)}')
+    data = {'title': 'Главная страница'}
+    return render(request, 'women/index.html', data)
 
 def categorys(request):
     return HttpResponse('<h1> ссылки по категориям </h1>')
@@ -21,6 +20,10 @@ def category(request, cat_id):
     if cat_id < 50:
         return redirect('home', permanent=True)
     return HttpResponse(f'<h1> Номер категории - </h1> <br> {cat_id}')
+
+def year_archive(request, year):
+
+    return HttpResponse(f'<h1> Год какой-то -  </h1> <br> {year}')
 
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1> Страница не найдена </h1>')
