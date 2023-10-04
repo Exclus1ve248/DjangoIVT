@@ -2,7 +2,7 @@ from django.urls import path
 
 from women.views import *
 
-from coolsite.women.views import category, index, categorys
+from women.views import category, index, categorys
 
 urlpatterns = [
     path('', index, name='home'),
