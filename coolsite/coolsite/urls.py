@@ -17,13 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from women.views import pageNotFound, serverError, badRequest, Forbidden
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('women.urls')),
 ]
-handler404 = pageNotFound
-handler500 = serverError
-handler403 = Forbidden
-handler400 = badRequest
+

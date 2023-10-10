@@ -28,14 +28,11 @@ def year_archive(request, year):
 
     return HttpResponse(f'<h1> Год какой-то -  </h1> <br> {year}')
 
+def alphabet(request, alt):
+
+    return HttpResponse(f'<h1> Маршрут -  </h1> <br> {alt}')
+
+
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1> Страница не найдена </h1>')
 
-def serverError(request, template_name='500.html'):
-
-    return HttpResponseServerError(f'<h1> ошибка </h1>')
-def Forbidden(request, exception, template_name='403.html'):
-    return HttpResponseForbidden('')
-
-def badRequest(request, exception, template_name='400.html'):
-    return HttpResponseBadRequest('')
