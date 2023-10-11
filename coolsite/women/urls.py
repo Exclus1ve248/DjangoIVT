@@ -18,7 +18,7 @@ class FourDigitYearConverter:
 register_converter(FourDigitYearConverter, "yyyy")
 
 class FourDigitAlpConv:
-    regex = '[a-z]'
+    regex = '[A-z]'
     def to_python(self, alt):
         return str(alt)
 
@@ -33,4 +33,5 @@ urlpatterns = [
     path('art/<a:alt>/', alphabet),
     path("articles/<yyyy:year>/", year_archive),
     path('cat/<int:cat_id>/', category),
+    path('get/', post_detail)
 ]

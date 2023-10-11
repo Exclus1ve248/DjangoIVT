@@ -36,3 +36,11 @@ def alphabet(request, alt):
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1> Страница не найдена </h1>')
 
+def post_detail(request):
+    if(request.GET):
+        converted = str()
+        for key in request.GET:
+            converted += key + '= ' + request.GET[key] + '|'
+        return HttpResponse (f'<p>{converted[:-1]}</p>')
+    return HttpResponse ('<p>GET is empty</p>')
+
