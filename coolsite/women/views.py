@@ -8,9 +8,15 @@ from django.shortcuts import render, redirect
 # Create your views here.
 menu =['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
 
+data_db = [{'id':1, 'FIO':'Гришин Никита Сергеевич', 'interesting':'литература, музыка, фотографии, программирование', 'is_sport':False },
+           {'id':2, 'FIO':'Ушаков Никита Юрьевич', 'interesting':'Марки, плавание, бисер, выступление ', 'is_sport':True },
+           {'id': 3, 'FIO': 'Солодкий Никита Олегович', 'interesting': 'игры, велосипед, тренажерный зал, машины ', 'is_sport': True}
+           ]
+
 def index(request):
     data = {'title': 'Главная страница',
             'menu': menu,
+            'posts': data_db,
             }
     return render(request, 'women/index.html', data)
 
@@ -41,6 +47,6 @@ def post_detail(request):
         converted = str()
         for key in request.GET:
             converted += key + '= ' + request.GET[key] + '|'
-        return HttpResponse (f'<p>{converted[:-1]}</p>')
-    return HttpResponse ('<p>GET is empty</p>')
+        return HttpResponse(f'<p>{converted[:-1]}</p>')
+    return HttpResponse('<p>GET is empty</p>')
 

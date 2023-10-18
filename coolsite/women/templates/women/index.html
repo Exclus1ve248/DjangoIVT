@@ -7,5 +7,24 @@
 <body>
 <h1>{{title}}</h1>
 <p>{{menu}}</p>
+<ul>
+    {% for p in posts %}
+    <li>
+       {% if p.is_sport == True %}
+        <b><h2>{{p.FIO}}</h2>
+        <p>{{p.interesting}}</p>
+        {% if not forloop.last %}
+            <hr>
+        {% endif %}</b>
+        {% else %}
+            <h5>{{p.FIO}}</h5>
+         <p>{{p.interesting}}</p>
+            {% if not forloop.last %}
+               <hr>
+         {% endif %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
 </body>
 </html>
