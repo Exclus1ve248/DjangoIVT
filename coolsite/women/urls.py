@@ -29,9 +29,9 @@ register_converter(FourDigitAlpConv, 'a')
 
 urlpatterns = [
     path('', index, name='home'),
-    path('cat/', categorys),
+    path('cat/', categorys, name='categorys'),
     path('art/<a:alt>/', alphabet),
-    path("articles/<yyyy:year>/", year_archive),
-    path('cat/<int:cat_id>/', category),
+    path("articles/<yyyy:year>/", year_archive, name='years'),
+    path('cat/<int:cat_id>/', category, name='post'),
     path('get/', post_detail)
 ]
