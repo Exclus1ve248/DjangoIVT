@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul style="list-style-type: square; ">
+    {% for m in menu %}
+    <li>
+        <p>
+            <a href="{% url m.url%}">
+        <h2>{{m.title}}</h2>
+        </a>
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+{% block content %}
+{% endblock %}
+</body>
+</html>
