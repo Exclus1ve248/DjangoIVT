@@ -32,7 +32,7 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('cat/', categorys, name='categorys'),
     path('art/<a:alt>/', alphabet),
-    path("articles/<yyyy:year>/", year_archive, name='years'),
+    path("articles/<yyyy:year>/", year_archive, name='archive'),
     path('cat/<int:cat_id>/', category, name='post'),
     path('get/', post_detail)
 ]

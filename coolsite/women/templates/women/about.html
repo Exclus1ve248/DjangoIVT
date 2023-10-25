@@ -5,6 +5,18 @@
     <title>Title</title>
 </head>
 <body>
+<ul style="list-style-type: square; ">
+    {% for m in menu %}
+    <li>
+        <p>
+            <a href="{% url m.url%}">
+        <h2>{{m.title}}</h2>
+        </a>
+        </p>
+    </li>
+    {% endfor %}
+</ul>
 <h1> О программе</h1>
+    <p><a href="{% url 'archive' 2022%}">В архив 2022 года</a></p>
 </body>
 </html>
