@@ -8,23 +8,29 @@ from django.shortcuts import render, redirect
 # Create your views here.
 menu =[{'title': 'Главная', 'url': 'home'},
        {'title': 'О сайте', 'url': 'about'},
+       {'title': 'Красивый css', 'url': 'cub'}
        ]
 
-data_db = [{'id':1, 'FIO':'Гришин Никита Сергеевич', 'interesting':'литература, музыка, фотографии, программирование', 'is_sport':False },
-           {'id':2, 'FIO':'Ушаков Никита Юрьевич', 'interesting':'Марки, плавание, бисер, выступление ', 'is_sport':True },
-           {'id': 3, 'FIO': 'Солодкий Никита Олегович', 'interesting': 'игры, велосипед, тренажерный зал, машины ', 'is_sport': True}
-           ]
+
 
 def index(request):
     data = {'title': 'Главная страница',
             'menu': menu,
-            'posts': data_db,
+
             }
     return render(request, 'women/index.html', context=data)
 
 def about(request):
+    data = {'title': 'О программе',
+            'menu': menu,
+            }
+    return render(request, 'women/index.html', context=data)
 
-    return render(request, 'women/about.html', {'menu':menu})
+def cub(request):
+    data = {'title': 'О программе',
+            'menu': menu,
+            }
+    return render(request, 'women/3D_kub.html', context=data)
 
 def categorys(request):
     return HttpResponse('<h1> ссылки по категориям </h1>')
@@ -35,6 +41,9 @@ def category(request, cat_id):
     if cat_id < 0:
         return redirect('home', permanent=True)
     return HttpResponse(f'<h1> Номер категории - </h1> <br> {cat_id}')
+
+
+
 
 def year_archive(request, year):
 
