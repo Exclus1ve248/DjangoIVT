@@ -35,6 +35,5 @@ urlpatterns = [
     path('art/<a:alt>/', alphabet),
     path("articles/<yyyy:year>/", year_archive),
     path('cat/<int:cat_id>/', category, name='post'),
-    path('students/', students, name='student'),
     path('get/', post_detail)
 ]
