@@ -22,8 +22,13 @@ def main():
 if __name__ == '__main__':
     main()
 """БД
+cd coolsite
 python manage.py makemigrations - создание миграций
 python manage.py sqlmigrate women 0001 - просмотр sql запроса миграции
 python manage.py migrate
 
+"""
+"""
+cd coolsite
+python manage.py shell_plus --print-sql  - улучшенная консоль
 """
