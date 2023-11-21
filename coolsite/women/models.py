@@ -15,8 +15,11 @@ class Students(models.Model):
     time_update = models.DateTimeField(auto_now=True)
     is_money = models.BooleanField(default=True)
 
-    def __str__(self):
-        return self.fio
+class Books(models.Model):
+    name = models.CharField(max_length=60)
+    cost = models.IntegerField()
+
+
 
 """
 создание записей
@@ -32,6 +35,4 @@ wd.delete()
 """
 
 
-class Books(models.Model):
-    name = models.CharField(max_length=40)
-    cost = models.IntegerField()
+
