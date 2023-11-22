@@ -14,6 +14,12 @@ class Students(models.Model):
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
     is_money = models.BooleanField(default=True)
+    slug = models.SlugField(max_length=255, db_index=True, unique=True)
+
+
+    def get_absolute_url(self):
+        return reverse('group', kwargs={'group_slug':self.slug})
+
 
 class Books(models.Model):
     name = models.CharField(max_length=60)

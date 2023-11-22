@@ -33,6 +33,7 @@ urlpatterns = [
     path('cub/', cub, name='cub'),
     path('cat/', categorys, name='categorys'),
     path('art/<a:alt>/', alphabet),
+    path("group/<slug:group_slug>/", group, name='group'),
     path("articles/<yyyy:year>/", year_archive),
     path('cat/<int:cat_id>/', category, name='post'),
     path('get/', post_detail)

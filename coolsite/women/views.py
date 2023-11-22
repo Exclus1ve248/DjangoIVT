@@ -20,6 +20,14 @@ def index(request):
             }
     return render(request, 'women/index.html', context=data)
 
+def group(request, group_slug):
+    group_id = get_object_or_404(Students, slug=group_slug)
+    data = {'title': 'Данные студента',
+            'menu': menu,
+            'group_id':group_id,
+            }
+    return render(request, 'women/id_student.html', context=data)
+
 def about(request):
     data = {'title': 'О программе',
             'menu': menu,
